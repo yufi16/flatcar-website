@@ -100,7 +100,10 @@
     {{- $jsFiles := slice -}}
     {{- range (slice "js/fastsearch.js" "js/lunr.js" "js/anchor.js") -}}
     {{- $jsFile := resources.GetMatch . | resources.Minify -}}
+    <script src="/js/copybutton.js"></script>
     <script src="{{ $jsFile.Permalink }}"></script>
+    <script src="/js/common.js"></script>
+    <script src="/themes/flatcar/assets/js/common.js"></script>
     {{ end }}
     {{ end }}
     {{ if .Store.Get "hasMermaid" }}
